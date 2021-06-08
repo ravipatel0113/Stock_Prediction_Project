@@ -1,5 +1,5 @@
 // setting the dropdown
-d3.json("/Static/data/stockInfo.json").then((d) => {
+d3.json("https://ravipatel0113.github.io/Stock_Prediction_Project/Static/data/stockInfo.json").then((d) => {
     var tickerNames = {}
     
     for (var i=0;i<d.length;i++) {
@@ -25,7 +25,7 @@ d3.selectAll("#selDataset").on("change", optionChanged);
 
 //defining function for change, json call, for plots
 function optionChanged(sample) {
-d3.json("/Static/data/stockInfo.json").then((d) => {
+d3.json("https://ravipatel0113.github.io/Stock_Prediction_Project/Static/data/stockInfo.json").then((d) => {
     var filterArray = d.filter(sampleObject=>sampleObject.Ticker==sample);
     var stockData = filterArray[0];
     console.log(filterArray)
@@ -125,7 +125,7 @@ d3.json("/Static/data/stockInfo.json").then((d) => {
     var layOutPredict = {title: `${stockData.Ticker} Month by Month prediction`,xaxis: {title: "Month Closing"},yaxis: {title: "Volume"}};
 
     //json call for the static plots
-    d3.json("/Static/data/stockInfo.json").then((d) => {
+    d3.json("https://ravipatel0113.github.io/Stock_Prediction_Project/Static/data/stockInfo.json").then((d) => {
         var ticker = []
         var barPercent = []
     
@@ -235,12 +235,12 @@ d3.json("/Static/data/stockInfo.json").then((d) => {
     if (prediction>close[5]) {
         document.body.className = "removeFS";
         
-        document.getElementById('image').src = '../../Resources/buybuybuy.gif';
+        document.getElementById('image').src = 'https://ravipatel0113.github.io/Stock_Prediction_Project/Resources/buybuybuy.gif';
         document.getElementById('image').setAttribute("style", "display");
         document.getElementById('image').style.width='400px';
         document.getElementById('image').style.height='200px';
 
-        document.getElementById('image3').src = '../../Resources/arrow.png';
+        document.getElementById('image3').src = 'https://ravipatel0113.github.io/Stock_Prediction_Project/Resources/arrow.png';
         document.getElementById('image3').setAttribute("style", "display");
         document.getElementById('image3').style.width='400px';
         document.getElementById('image3').style.height='200px';
@@ -248,12 +248,12 @@ d3.json("/Static/data/stockInfo.json").then((d) => {
     else {
         document.body.className = "removeFS";
 
-        document.getElementById('image').src = '../../Resources/sellsellsell.gif';
+        document.getElementById('image').src = 'https://ravipatel0113.github.io/Stock_Prediction_Project/Resources/sellsellsell.gif';
         document.getElementById('image').setAttribute("style", "display");
         document.getElementById('image').style.width='400px';
         document.getElementById('image').style.height='200px';
 
-        document.getElementById('image3').src = '../../Resources/arrow.png';
+        document.getElementById('image3').src = 'https://ravipatel0113.github.io/Stock_Prediction_Project/Resources/arrow.png';
         document.getElementById('image3').setAttribute("style", "display");
         document.getElementById('image3').style.width='400px';
         document.getElementById('image3').style.height='200px';
