@@ -1,4 +1,4 @@
-# Project_2
+# Stock_Prediction_Project
 
 Group2
 Kevin Sheekey
